@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SwipeInterface from '../components/SwipeInterface';
@@ -6,6 +6,14 @@ import SwipeInterface from '../components/SwipeInterface';
 const SwipePage: React.FC = () => {
   const navigate = useNavigate();
   const [preferences, setPreferences] = useState<boolean[]>([]);
+  useEffect(() => {
+    // ページがマウントされた時に実行
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'page_view',
+      'page_path': window.location.pathname
+    });
+  }, []); // 空の依存配列で1回だけ実行
 
   const handleSwipeComplete = (prefs: boolean[]) => {
     setPreferences(prefs);
