@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-export interface Palette {
+interface Palette {
   id: number;
   name: string;
   description: string;
@@ -67,10 +67,9 @@ const palettes: Palette[] = [
 
 interface ColorPaletteProps {
   preferences: boolean[];
-  onRestart: () => void;
 }
 
-export const ColorPalette: React.FC<ColorPaletteProps> = ({ preferences, onRestart }) => {
+const ColorPalette: React.FC<ColorPaletteProps> = ({ preferences }) => {
   // Simple algorithm to select palette based on preferences
   const likedCount = preferences.filter(Boolean).length;
   const selectedPalette = palettes[Math.min(Math.floor(likedCount / 2), palettes.length - 1)];
@@ -281,3 +280,5 @@ export const ColorPalette: React.FC<ColorPaletteProps> = ({ preferences, onResta
     </motion.div>
   );
 };
+
+export default ColorPalette;

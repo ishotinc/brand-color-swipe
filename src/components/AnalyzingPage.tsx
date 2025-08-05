@@ -25,7 +25,7 @@ const analysisSteps = [
   }
 ];
 
-export const AnalyzingPage: React.FC = () => {
+const AnalyzingPage: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [progress, setProgress] = useState(0);
 
@@ -242,3 +242,5 @@ export const AnalyzingPage: React.FC = () => {
     </div>
   );
 };
+
+export default AnalyzingPage;

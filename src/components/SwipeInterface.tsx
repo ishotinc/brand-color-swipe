@@ -19,7 +19,7 @@ const colorCards = [
   { id: 10, gradient: 'from-amber-400 via-orange-500 to-red-500', name: 'Golden Hour' },
 ];
 
-export const SwipeInterface: React.FC<SwipeInterfaceProps> = ({ onComplete }) => {
+const SwipeInterface: React.FC<SwipeInterfaceProps> = ({ onComplete }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [preferences, setPreferences] = useState<boolean[]>([]);
 
@@ -164,3 +164,5 @@ export const SwipeInterface: React.FC<SwipeInterfaceProps> = ({ onComplete }) =>
     </div>
   );
 };
+
+export default SwipeInterface;
