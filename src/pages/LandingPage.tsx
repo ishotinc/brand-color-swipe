@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { PrivacyPolicy } from '../components/PrivacyPolicy';
 
 interface FormData {
   mail: string;
@@ -12,6 +13,7 @@ interface FormData {
 const LandingPage: React.FC = () => {
   const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     mail: '',
     free19: '',
@@ -294,6 +296,24 @@ const LandingPage: React.FC = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Footer */}
+      <footer className="bg-gray-50 border-t border-gray-200 mt-16">
+        <div className="container mx-auto px-6 py-6">
+          <div className="flex justify-center">
+            <button
+              onClick={() => setIsPrivacyOpen(true)}
+              className="text-gray-600 hover:text-gray-800 text-sm underline transition-colors"
+            >
+              Privacy Policy
+            </button>
+            
+          </div>
+        </div>
+      </footer>
+
+      {/* Privacy Policy Modal */}
+      <PrivacyPolicy isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
     </div>
   );
 };
