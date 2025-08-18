@@ -4,6 +4,7 @@ import LandingPage from './pages/LandingPage';
 import SwipePage from './pages/SwipePage';
 import AnalyzingPageWrapper from './pages/AnalyzingPageWrapper';
 import ResultsPage from './pages/ResultsPage';
+import ThanksPage from './pages/ThanksPage';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/swipe" element={<SwipePage />} />
         <Route path="/analyzing" element={<AnalyzingPageWrapper />} />
         <Route path="/results" element={<ResultsPage />} />
+        <Route path="/thanks" element={<ThanksPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
