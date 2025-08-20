@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 const ThanksPage: React.FC = () => {
+  useEffect(() => {
+    // Push conversion event to dataLayer when component mounts
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      'event': 'conversion',
+      'page_path': '/thanks',
+      'conversion_type': 'form_submission'
+    });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center py-8">
       <motion.div
