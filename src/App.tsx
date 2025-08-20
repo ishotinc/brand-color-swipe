@@ -5,6 +5,7 @@ import SwipePage from './pages/SwipePage';
 import AnalyzingPageWrapper from './pages/AnalyzingPageWrapper';
 import ResultsPage from './pages/ResultsPage';
 import ThanksPage from './pages/ThanksPage';
+import ReportPage from './pages/ReportPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/analyzing" element={<AnalyzingPageWrapper />} />
         <Route path="/results" element={<ResultsPage />} />
         <Route path="/thanks" element={<ThanksPage />} />
+        <Route path="/report" element={<ReportPage />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>

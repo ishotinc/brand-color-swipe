@@ -42,7 +42,7 @@ const ThanksPage: React.FC = () => {
           
           <div className="space-y-4">
             <Link
-              to="/"
+              to="/report"
               className="inline-block px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors"
             >
               Start New Analysis

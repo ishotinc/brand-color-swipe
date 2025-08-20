@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { PrivacyPolicy } from '../components/PrivacyPolicy';
+import Footer from '../components/Footer';
 
 interface FormData {
   mail: string;
@@ -216,7 +217,7 @@ const LandingPage: React.FC = () => {
 
                 <div>
                   <label htmlFor="free21" className="block text-sm font-bold text-gray-700 mb-1">
-                    What brought you to try this brand color service?
+                    What are you hoping to achieve with this service ? 
                   </label>
                   <input
                     type="text"
@@ -297,20 +298,16 @@ const LandingPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Footer */}
-      <footer className="bg-gray-50 border-t border-gray-200 mt-16">
-        <div className="container mx-auto px-6 py-6">
-          <div className="flex justify-center">
-            <button
-              onClick={() => setIsPrivacyOpen(true)}
-              className="text-gray-600 hover:text-gray-800 text-sm underline transition-colors"
-            >
-              Privacy Policy
-            </button>
-            
-          </div>
-        </div>
-      </footer>
+      {/* Privacy Policy Section */}
+      <div className="text-center py-6 border-t border-gray-200 mt-16">
+        <button
+          onClick={() => setIsPrivacyOpen(true)}
+          className="text-gray-600 hover:text-gray-800 text-sm underline transition-colors"
+        >
+          Privacy Policy
+        </button>
+      </div>
+
 
       {/* Privacy Policy Modal */}
       <PrivacyPolicy isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
