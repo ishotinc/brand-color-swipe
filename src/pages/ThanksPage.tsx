@@ -13,7 +13,7 @@ const ThanksPage: React.FC = () => {
     // Push conversion event to dataLayer when component mounts
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
-      'event': 'conversion',
+      'event': 'page_view',
       'page_path': '/thanks',
       'conversion_type': 'form_submission'
     });
